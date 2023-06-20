@@ -3,6 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+ul{
+  list-style-type: none;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #fff;
+
+}
 .App{
   height: 100vh;
   display: flex;
@@ -49,5 +57,5 @@ input{
   border: 3px solid #fff;
   border-radius: 8px;
   width: 450px;
-  height: 300px;
+  min-height: 300px;
 }
