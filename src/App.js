@@ -1,14 +1,21 @@
 
 import './App.css';
-
+import {useState} from 'react';
 function App() {
+  const [value, setvalue] = useState(" ");
+  const handleChange = (e) => {
+  setvalue(e.target.value)
+  console.log(e.target.value)
+}
   return (
-    <div className="App">
+   <>
+      
+   <div className="App">
         <h1>To Do List</h1>
-        <form className="form">
+        <form className="form" >
           {/* Serach Bar Start */}
           <div>
-            <input  placeholder="New To-do"></input>
+            <input value={value}  onChange={handleChange} placeholder="New To-do"></input>
           </div>
           {/* Serach Bar End */}
          
@@ -27,6 +34,7 @@ function App() {
          {/* To Do  Section End */}
 
     </div>
+    </>
   );
 }
 
