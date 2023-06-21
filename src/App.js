@@ -61,7 +61,6 @@ function App() {
             {savedValue.map((value, index) => (
               <li
                 key={index}
-                className={index === selectedTodo ? "selected" : ""}
                 onClick={() => handleSelectTodo(index)}
               >
                 {value}
