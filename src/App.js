@@ -1,51 +1,75 @@
-
 import './App.css';
-import {useState} from 'react';
+import { useState } from 'react';
 
 function App() {
-  const [value, setvalue] = useState(" ");
-  const [savedValue, setsavedValue] = useState([]);
+  const [value, setValue] = useState("");
+  const [savedValue, setSavedValue] = useState([]);
+  const [selectedTodo, setSelectedTodo] = useState(null);
+
   const handleChange = (e) => {
-  setvalue(e.target.value)
-  console.log(e.target.value)
-  }
-  const handleadd = (event) =>{
-    setsavedValue([...savedValue,value]);
-    setvalue('');
+    setValue(e.target.value);
+  };
+
+  const handleAdd = (event) => {
     event.preventDefault();
-  }
+    setSavedValue([...savedValue, value]);
+    setValue("");
+ 
+  };
+
+  const handleDelete = (event) => {
+    event.preventDefault();
+    if (selectedTodo !== null) {
+      const updatedTodos = [...savedValue];
+      updatedTodos.splice(selectedTodo, 1);
+      setSavedValue(updatedTodos);
+      setSelectedTodo(null);
+    }
+  };
+
+  const handleSelectTodo = (index) => {
+    setSelectedTodo(index);
+  };
+
   return (
-   <>
+    <>
       <div className="App">
-         <h1>To Do List</h1>
-          <form className="form" >
-           {/* Serach Bar Start */}
-            <div>
-                <input value={value}  onChange={handleChange} placeholder="New To-do">
-                </input>
-            </div>
-           {/* Serach Bar End */}
-            
-          {/* Buttons Section Start */}
-            <div className="buttons">
-              <button className="buttonadd" onClick={handleadd} type="submit">Add</button>
-               <button className="buttonadelete" type="submit">Delete</button>
-            </div>
-          {/* Buttons Section End */}
-          </form>
+        <h1>To Do List</h1>
+        <form className="form">
+          <div>
+            <input
+              value={value} onChange={handleChange}   placeholder="New To-do"
+            />
+          </div>
+          <div className="buttons">
+            <button className="buttonadd" onClick={handleAdd} type="submit">
+              Add
+            </button>
+            <button
+              type="submit"
+              onClick={handleDelete}
+              className="buttonadelete"
+              disabled={selectedTodo === null}
+            >
+              Seçili Görevi Sil
+            </button>
+          </div>
+        </form>
 
-          {/* To Do  Section Start */}
-            <div className="todolist">
-                <ul>
-                  {savedValue.map((value,index) =>(
-                      <li key={index}>{value}</li>
-                  ))}
-                  
-                </ul>
-            </div>
-          {/* To Do  Section End */}
-
-       </div>
+        <div className="todolist">
+          <ul>
+            {savedValue.map((value, index) => (
+              <li
+                key={index}
+                className={index === selectedTodo ? "selected" : ""}
+                onClick={() => handleSelectTodo(index)}
+              >
+                {value}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </>
   );
 }
