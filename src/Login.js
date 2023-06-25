@@ -20,7 +20,7 @@ function Login() {
                     type='password' />
                     <div className='buttonLog'>
                         <button className='btn log'>Login</button>
-                        <button className='btn google' ><img src={google} ></img>Sign in with Google</button>
+                       
             
                     </div>
                 </form>
