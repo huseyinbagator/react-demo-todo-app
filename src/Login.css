@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.loginPage{
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(0, 131, 176, 0.37) 0%, rgba(219, 0, 158, 0.32) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    height: 500px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: #FFF;
+}
+.left{
+    position: relative;
+    border-radius: 40px;
+    background: #C0DBEA;   
+    height: 500px;
+    width: 200px; 
+    
+}
+.image{
+    position: absolute;
+    top: 60px;
+    right:5px;
+    width: 500px;
+}
+.right{
+    margin-left: 150px;
+}
+.h2title{ 
+   margin-top: 30px;   
+   color: #D885A3;
+   font-size: 30px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+.ptitle{
+    margin-top: 10px;
+   opacity: .9;
+}
+.h1title{
+    margin-top: 20px;   
+}
+.formLogin{
+    display: flex;
+    flex-direction: column;
+
+}
+.inpt{
+    height: 35px;
+    margin-top: 20px;
+}
+.buttonLog{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.btn{
+  margin-top: 25px; 
+  height: 40px;
+}
+.log{
+    background-color: #D885A3;
+    border: none;
+    color: white;
+    font-size: 18px;
+    transition: all .5s ease-in-out;
+}
+.log:hover{
+    color:  #D885A3;
+    background-color: #FFF;
+    border: 1px solid #D885A3;
+
+}
+.google{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    border:  1px solid rgba(0, 0, 0, 0.543);
+    transition: all .5s ease-in-out;
+}
