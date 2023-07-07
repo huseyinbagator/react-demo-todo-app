@@ -25,6 +25,9 @@ h1{
  color: #fff;
 
 }
+form{
+  flex-direction: column;
+}
 input{
   height: 40px;
   width: 400px;
@@ -34,10 +37,11 @@ input{
   text-align: center;
 }
 .buttons{
-  margin-top: 50px;
-  margin-left: 70px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
 }
+
 .buttons button{
   margin: 0 10px;
   width: 120px;

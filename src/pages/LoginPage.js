@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';
 import image from '../images/image-1.png';
-import google from '../images/Google.svg';
+
 
 function Login() {
   return (
