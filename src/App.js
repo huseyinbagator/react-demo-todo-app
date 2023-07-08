@@ -1,12 +1,17 @@
 import React from 'react';
-import TasksPage from './pages/TasksPage';
+import LoginPage from './pages/LoginPage';
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import './App.css';
 function App() {
 
   return (
-    <div>
-        <TasksPage/>
-    </div>
+    <BrowserRouter>
+      <div>
+          <Routes>
+            <Route path="/"  element={<LoginPage/>} />
+          </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -25,7 +25,7 @@ function Login() {
                 </form>
             </div>
             <div className='left'>
-                <img className='image' src={image} />
+                <img className='image' alt='İmage' src={image} />
             </div>
         </div>
     </div>
