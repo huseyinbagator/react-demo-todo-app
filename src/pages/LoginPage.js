@@ -1,11 +1,10 @@
 import React from 'react';
-import './Login.css';
 import image from '../images/image-1.png';
 
 
 function Login() {
   return (
-    <div className='loginPage'>
+    <div className='LoginPage'>
         <div className='container'>
             <div className='right'>
                 <h2 className='h2title'>Welcome to To Do!</h2>
