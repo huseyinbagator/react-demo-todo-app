@@ -1,6 +1,7 @@
 import React from 'react';
-import LoginPage from './pages/LoginPage';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
+import LoginPage from './pages/LoginPage';
+import TasksPage from './pages/TasksPage';
 import './App.css';
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <div>
           <Routes>
             <Route path="/"  element={<LoginPage/>} />
+            <Route path='/tasks' element={<TasksPage/>} />
           </Routes>
       </div>
     </BrowserRouter>
