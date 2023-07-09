@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -34,7 +35,11 @@ function TasksPage() {
       };
   return (
     <div className="App">
-        <h1>To Do List</h1>
+      <div className='nav-top'>
+         <h1>To Do List</h1>
+         <Link className='exit' to="/">Exit</Link>
+      </div>
+       
         <form className="form">
           <div>
             <input
