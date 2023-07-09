@@ -69,16 +69,17 @@ input{
 .nav-top{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start  ;
   width: 30%;
+  margin-top: 10px;
 }
 .exit{
   background-color: #426CF1;
   color: #fff;
-  width: 100px;
-  height: 30px;
-  text-align: center;
-  text-decoration: none;
+  padding: 10px 20px ;
+
+  text-decoration: none;  
+  border-radius: 5px;
 }
 .exit:hover{
   background-color: #fff;
