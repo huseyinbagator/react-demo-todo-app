@@ -66,6 +66,24 @@ input{
   width: 450px;
   min-height: 300px;
 }
+.nav-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+}
+.exit{
+  background-color: #426CF1;
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+.exit:hover{
+  background-color: #fff;
+  color:#426CF1;
+}
 
 /* LoginPage Start*/
 

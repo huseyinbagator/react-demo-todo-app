@@ -16,7 +16,7 @@ function Login() {
         setPassword(event.target.value);
     }
     const handleLogin = (event) =>{
-        if( Username == "admin" && Password == 'admin'){
+        if( Username === "admin" && Password === 'admin'){
             navigate('/tasks');
         }
         else {
