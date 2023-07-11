@@ -29,9 +29,7 @@ function TasksPage() {
           setSelectedTodo(null);
         }
       };
-      const handleRemove =(index) =>{
-
-      }
+    
       const handleSelectTodo = (index) => {
         setSelectedTodo(index);
       };
