@@ -29,7 +29,7 @@ function TasksPage() {
           setSelectedTodo(null);
         }
       };
-      
+    
       const handleSelectTodo = (index) => {
         setSelectedTodo(index);
       };
@@ -65,10 +65,11 @@ function TasksPage() {
           <ul>
             {savedValue.map((value, index) => (
               <li
-                key={index}
+               key={index}
                 onClick={() => handleSelectTodo(index)}
-              >
+              > <span  className={`round ${selectedTodo === index ? 'green' : ''}`}></span>
                 {value}
+               
               </li>
             ))}
           </ul>

@@ -10,9 +10,12 @@ ul{
   margin-top:10px;
   font-size: 18px;
   color: #fff;
+  
 }
 li{
   margin-top:5px;
+  display: flex;
+  align-items: center;
 }
 .App{
   height: 100vh;
@@ -85,7 +88,17 @@ input{
   background-color: #fff;
   color:#426CF1;
 }
-
+.round{
+  background-color:grey;
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin-right: 20px;
+  border-radius: 100%;
+}
+.green{
+  background-color: green !important;
+}
 /* LoginPage Start*/
 
 
