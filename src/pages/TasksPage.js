@@ -31,7 +31,12 @@ function TasksPage() {
       };
     
       const handleSelectTodo = (index) => {
-        setSelectedTodo(index);
+        if (selectedTodo === index) {
+          setSelectedTodo(null); 
+        } else {
+          setSelectedTodo(index);
+        }
+      
       };
   return (
     <div className="App">
