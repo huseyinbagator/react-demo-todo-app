@@ -30,7 +30,7 @@ function TasksPage() {
       setSavedValue([...savedValue, value]);
       setValue("");
     } else {
-      alert("Lütfen To Do Giriniz..");
+      alert("Please enter To Do..");
     }
   };
 
