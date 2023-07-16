@@ -30,7 +30,7 @@ function TasksPage() {
       setSavedValue([...savedValue, value]);
       setValue("");
     } else {
-      alert("Please enter To Do..");
+      alert("Please enter a To Do...");
     }
   };
 
