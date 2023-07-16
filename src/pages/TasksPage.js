@@ -3,32 +3,32 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function TasksPage() {
-  const [value, setValue] = useState("");
-  const [savedValue, setSavedValue] = useState([]);
+  const [currentTask, setCurrentTask] = useState("");
+  const [taskLists, setTaskList] = useState([]);
   const [selectedTodo, setSelectedTodo] = useState(null);
 
   useEffect(() => {
     const storedData = localStorage.getItem("tasks");
     if (storedData && storedData !== "undefined") {
-      setSavedValue(JSON.parse(storedData));
+      setTaskList(JSON.parse(storedData));
     }
   }, []);
 
   useEffect(() => {
-    if (savedValue.length) {
-      localStorage.setItem("tasks", JSON.stringify(savedValue));
+    if (taskLists.length) {
+      localStorage.setItem("tasks", JSON.stringify(taskLists));
     }
-  }, [savedValue]);
+  }, [taskLists]);
 
   const handleChange = (e) => {
-    setValue(e.target.value);
+    setCurrentTask(e.target.value);
   };
 
   const handleAdd = (event) => {
     event.preventDefault();
-    if (value) {
-      setSavedValue([...savedValue, value]);
-      setValue("");
+    if (currentTask) {
+      setTaskList([...taskLists, currentTask]);
+      setCurrentTask("");
     } else {
       alert("Please enter a To Do...");
     }
@@ -37,11 +37,11 @@ function TasksPage() {
   const handleDelete = (event) => {
     event.preventDefault();
     if (selectedTodo !== null) {
-      const updatedTodos = [...savedValue];
+      const updatedTodos = [...taskLists];
       updatedTodos.splice(selectedTodo, 1);
-      setSavedValue(updatedTodos);
+      setTaskList(updatedTodos);
       setSelectedTodo(null);
-      if (savedValue.length === 1) {
+      if (taskLists.length === 1) {
         localStorage.setItem("tasks", JSON.stringify(updatedTodos));
       }
     }
@@ -67,7 +67,7 @@ function TasksPage() {
       <form className="form">
         <div>
           <input
-            value={value}
+            value={currentTask}
             onChange={handleChange}
             placeholder="New To-do"
           />
@@ -89,13 +89,13 @@ function TasksPage() {
 
       <div className="todolist">
         <ul>
-          {savedValue.map((value, index) => (
+          {taskLists.map((currentTask, index) => (
             <li key={index} onClick={() => handleSelectTodo(index)}>
               {" "}
               <span
                 className={`round ${selectedTodo === index ? "green" : ""}`}
               ></span>
-              {value}
+              {currentTask}
             </li>
           ))}
         </ul>
