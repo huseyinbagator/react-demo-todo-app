@@ -26,9 +26,12 @@ function TasksPage() {
 
   const handleAdd = (event) => {
     event.preventDefault();
-
-    setSavedValue([...savedValue, value]);
-    setValue("");
+    if (value) {
+      setSavedValue([...savedValue, value]);
+      setValue("");
+    } else {
+      alert("Please enter a To Do...");
+    }
   };
 
   const handleDelete = (event) => {
