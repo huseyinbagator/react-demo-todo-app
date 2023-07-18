@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function TasksPage() {
   const [currentTask, setCurrentTask] = useState("");
   const [taskLists, setTaskList] = useState([]);
-  const [selectedTodo, setSelectedTodo] = useState(null);
+  const [selectedTask, setSelectedTask] = useState(null);
 
   useEffect(() => {
     const storedData = localStorage.getItem("tasks");
@@ -36,22 +36,22 @@ function TasksPage() {
 
   const handleDelete = (event) => {
     event.preventDefault();
-    if (selectedTodo !== null) {
-      const updatedTodos = [...taskLists];
-      updatedTodos.splice(selectedTodo, 1);
-      setTaskList(updatedTodos);
-      setSelectedTodo(null);
+    if (selectedTask !== null) {
+      const updatedTask = [...taskLists];
+      updatedTask.splice(selectedTask, 1);
+      setTaskList(updatedTask);
+      setSelectedTask(null);
       if (taskLists.length === 1) {
-        localStorage.setItem("tasks", JSON.stringify(updatedTodos));
+        localStorage.setItem("tasks", JSON.stringify(updatedTask));
       }
     }
   };
 
-  const handleSelectTodo = (index) => {
-    if (selectedTodo === index) {
-      setSelectedTodo(null);
+  const handleSelectTask = (index) => {
+    if (selectedTask === index) {
+      setSelectedTask(null);
     } else {
-      setSelectedTodo(index);
+      setSelectedTask(index);
     }
   };
 
@@ -80,20 +80,20 @@ function TasksPage() {
             type="submit"
             onClick={handleDelete}
             className="buttonadelete"
-            disabled={selectedTodo === null}
+            disabled={selectedTask === null}
           >
             Seçili Görevi Sil
           </button>
         </div>
       </form>
 
-      <div className="todolist">
+      <div className="tasklist">
         <ul>
           {taskLists.map((currentTask, index) => (
-            <li key={index} onClick={() => handleSelectTodo(index)}>
+            <li key={index} onClick={() => handleSelectTask(index)}>
               {" "}
               <span
-                className={`round ${selectedTodo === index ? "green" : ""}`}
+                className={`round ${selectedTask === index ? "green" : ""}`}
               ></span>
               {currentTask}
             </li>
