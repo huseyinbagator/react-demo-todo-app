@@ -4,11 +4,17 @@
 
 Live: https://react-demo-todo-app-df6e3.firebaseapp.com
 
-Type `admin` for the user name and `admin` for the password in the text boxes.
+Test User Credentials:
+
+    Username: admin
+    Password: admin
 
 ## Uploading Project Files
- You need to load the project files before running the project.
- ### `npm install`
+
+You need to load the project files before running the project.
+
+### `npm install`
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -21,7 +27,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -33,8 +38,13 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 # App Screenshots
+
 ### Login Page
+
 ![Login](./readme-images/login-screen.PNG)
+
 ##
+
 ### Tasks Page
+
 ![Login](./readme-images/tasks-screen.PNG)
