@@ -1,12 +1,22 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function TasksPage() {
+  
   const [currentTask, setCurrentTask] = useState("");
   const [taskLists, setTaskList] = useState([]);
   const [selectedTask, setSelectedTask] = useState(null);
+  
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate('/');
+    }
+  }, [isLoggedIn]);
   useEffect(() => {
     const storedData = localStorage.getItem("tasks");
     if (storedData && storedData !== "undefined") {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import image from '../images/image-1.png';
 import { useNavigate} from 'react-router-dom';
 
@@ -6,8 +6,10 @@ import { useNavigate} from 'react-router-dom';
 function Login() {
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
-    const navigate = useNavigate();;
-
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const navigate = useNavigate();
+   
+    
     const handleUsernameChange = (event) =>{
         setUsername(event.target.value);
        
@@ -15,9 +17,11 @@ function Login() {
     const handlePasswordChange = (event) =>{
         setPassword(event.target.value);
     }
-    const handleLogin = (event) =>{
+     const handleLogin = (event) =>{
         if( Username === "admin" && Password === 'admin'){
-            navigate('/tasks');
+            localStorage.setItem('isLoggedIn', 'true');
+            setIsLoggedIn(true);
+             navigate('/tasks');
         }
         else {
             alert('Username or password is wrong')
