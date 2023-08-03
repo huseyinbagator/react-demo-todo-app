@@ -4,19 +4,20 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function TasksPage() {
-  
   const [currentTask, setCurrentTask] = useState("");
   const [taskLists, setTaskList] = useState([]);
   const [selectedTask, setSelectedTask] = useState(null);
-  
-  const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+  // Get the username from localStorage
+  const username = localStorage.getItem('username');
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isLoggedIn) {
+    if (!username) {
       navigate('/');
     }
-  }, [isLoggedIn]);
+  }, [username]);
+
   useEffect(() => {
     const storedData = localStorage.getItem("tasks");
     if (storedData && storedData !== "undefined") {
@@ -68,7 +69,7 @@ function TasksPage() {
   return (
     <div className="App">
       <div className="nav-top">
-        <h1>To Do List</h1>
+           <h1>To Do List</h1>
         <Link className="exit" to="/">
           Exit
         </Link>
