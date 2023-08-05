@@ -8,15 +8,15 @@ function TasksPage() {
   const [taskLists, setTaskList] = useState([]);
   const [selectedTask, setSelectedTask] = useState(null);
 
-  // Get the username from localStorage
-  const username = localStorage.getItem('username');
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Get the username from localStorage
+    const username = localStorage.getItem("username");
     if (!username) {
-      navigate('/');
+      navigate("/");
     }
-  }, [username]);
+  }, [navigate]);
 
   useEffect(() => {
     const storedData = localStorage.getItem("tasks");
@@ -65,12 +65,14 @@ function TasksPage() {
       setSelectedTask(index);
     }
   };
-
+  const handleExit= () =>{
+    localStorage.removeItem("username");
+  }
   return (
     <div className="App">
       <div className="nav-top">
-           <h1>To Do List</h1>
-        <Link className="exit" to="/">
+        <h1>To Do List</h1>
+        <Link onClick={handleExit} className="exit" to="/">
           Exit
         </Link>
       </div>
