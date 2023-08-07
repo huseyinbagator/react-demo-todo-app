@@ -65,9 +65,9 @@ function TasksPage() {
       setSelectedTask(index);
     }
   };
-  const handleExit= () =>{
+  const handleExit = () => {
     localStorage.removeItem("username");
-  }
+  };
   return (
     <div className="App">
       <div className="nav-top">
