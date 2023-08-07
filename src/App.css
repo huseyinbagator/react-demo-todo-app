@@ -1,37 +1,35 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-ul{
+ul {
   list-style-type: none;
   margin-left: 20px;
-  margin-top:10px;
+  margin-top: 10px;
   font-size: 18px;
   color: #fff;
-  
 }
-li{
-  margin-top:5px;
+li {
+  margin-top: 5px;
   display: flex;
   align-items: center;
 }
-.App{
+.App {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   background: linear-gradient(to bottom right, red, blue);
 }
-h1{
- color: #fff;
-
+h1 {
+  color: #fff;
 }
-form{
+form {
   flex-direction: column;
 }
-input{
+input {
   height: 40px;
   width: 400px;
   margin-top: 100px;
@@ -39,152 +37,149 @@ input{
   padding-left: 10px;
   text-align: center;
 }
-.buttons{
+.buttons {
   margin-top: 10px;
   margin-bottom: 10px;
-
 }
 
-.buttons button{
+.buttons button {
   margin: 0 10px;
   width: 120px;
   height: 40px;
-  color:#fff;
-  background-color: #426CF1;
+  color: #fff;
+  background-color: #426cf1;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border: none;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-.buttons button:hover{
-  color:#426CF1;
+.buttons button:hover {
+  color: #426cf1;
   background-color: #fff;
 }
 
-
-.tasklist{
+.tasklist {
   margin-top: 5px;
   border: 3px solid #fff;
   border-radius: 8px;
   width: 450px;
   min-height: 300px;
 }
-.nav-top{
+.nav-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 30%;
   margin-top: 10px;
 }
-.exit{
-  background-color: #426CF1;
+.exit {
+  background-color: #426cf1;
   color: #fff;
-  padding: 10px 20px ;
+  padding: 10px 20px;
 
-  text-decoration: none;  
+  text-decoration: none;
   border-radius: 5px;
 }
-.exit:hover{
+.exit:hover {
   background-color: #fff;
-  color:#426CF1;
+  color: #426cf1;
 }
-.round{
-  background-color:grey;
+.round {
+  background-color: grey;
   width: 30px;
   height: 30px;
   display: block;
   margin-right: 20px;
   border-radius: 100%;
 }
-.green{
+.green {
   background-color: green !important;
 }
 /* LoginPage Start*/
 
-
-.LoginPage{
+.LoginPage {
   height: 100vh;
-  background: linear-gradient(90deg, rgba(0, 131, 176, 0.37) 0%, rgba(219, 0, 158, 0.32) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 131, 176, 0.37) 0%,
+    rgba(219, 0, 158, 0.32) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
-.container{
+.container {
   display: flex;
   justify-content: space-between;
   width: 1000px;
   height: 500px;
   flex-shrink: 0;
   border-radius: 40px;
-  background: #FFF;
+  background: #fff;
 }
-.left{
+.left {
   position: relative;
   border-radius: 40px;
-  background: #C0DBEA;   
+  background: #c0dbea;
   height: 500px;
-  width: 200px; 
-  
+  width: 200px;
 }
-.image{
+.image {
   position: absolute;
   top: 60px;
-  right:5px;
+  right: 5px;
   width: 500px;
 }
-.right{
+.right {
   margin-left: 150px;
 }
-.h2title{ 
- margin-top: 30px;   
- color: #D885A3;
- font-size: 30px;
- font-family: Arial, Helvetica, sans-serif;
+.h2title {
+  margin-top: 30px;
+  color: #d885a3;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.ptitle{
+.ptitle {
   margin-top: 10px;
- opacity: .9;
+  opacity: 0.9;
 }
-.h1title{
-  margin-top: 20px;   
+.h1title {
+  margin-top: 20px;
 }
-.formLogin{
+.formLogin {
   display: flex;
   flex-direction: column;
-
 }
-.inpt{
+.inpt {
   height: 35px;
   margin-top: 20px;
 }
-.buttonLog{
+.buttonLog {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
-.btn{
-margin-top: 25px; 
-height: 40px;
+.btn {
+  margin-top: 25px;
+  height: 40px;
 }
-.log{
-  background-color: #D885A3;
+.log {
+  background-color: #d885a3;
   border: none;
   color: white;
   font-size: 18px;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-.log:hover{
-  color:  #D885A3;
-  background-color: #FFF;
-  border: 1px solid #D885A3;
-
+.log:hover {
+  color: #d885a3;
+  background-color: #fff;
+  border: 1px solid #d885a3;
 }
-.google{
+.google {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFF;
-  border:  1px solid rgba(0, 0, 0, 0.543);
-  transition: all .5s ease-in-out;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.543);
+  transition: all 0.5s ease-in-out;
 }
