@@ -95,7 +95,7 @@ function TasksPage() {
             className="buttonadelete"
             disabled={selectedTask === null}
           >
-            Seçili Görevi Sil
+            Delete Selected Task
           </button>
         </div>
       </form>
