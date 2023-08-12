@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import image from "../images/image-1.png";
-import { useNavigate } from "react-router-dom";
+
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router-dom";
+
+import image from "../images/image-1.png";
 
 function Login() {
   const [Username, setUsername] = useState("");
@@ -36,18 +38,19 @@ function Login() {
   }, [navigate]);
 
   return (
-    <div className="LoginPage d-flex  justify-content-center align-items-center">
+    <main className="login-page-main d-flex  justify-content-center align-items-center">
       <Container className=" d-flex justify-content-between bg-white rounded-4">
-        <div className="right">
-          <h2 className="h2title mt-4">Welcome to To Do!</h2>
-          <p className="mt-3">
-            "Manage your time, organize your tasks with To Do!"
-          </p>
-          <h1 className="mt-3 text-dark">Log In</h1>
-
+        <div className="login-form-section">
+          <section>
+            <h2 className="h2title mt-4">Welcome to To Do!</h2>
+            <p className="mt-3">
+              "Manage your time, organize your tasks with To Do!"
+            </p>
+            <h1 className="mt-3 text-dark">Log In</h1>
+          </section>
           <Form className="d-flex flex-column" onSubmit={handleLogin}>
             <Form.Group>
-              <Form.Label>Username name</Form.Label>
+              <Form.Label>Username</Form.Label>
               <Form.Control
                 type="text"
                 className=" mt-1 mb-1"
@@ -70,11 +73,11 @@ function Login() {
             </div>
           </Form>
         </div>
-        <div className="left rounded-4 d-none d-lg-block">
-          <img className="image" alt="Image" src={image} />
-        </div>
+        <aside className="login-form-aside rounded-4 d-none d-lg-block">
+          <img className="login-girl-image" alt="Girl-vector" src={image} />
+        </aside>
       </Container>
-    </div>
+    </main>
   );
 }
 

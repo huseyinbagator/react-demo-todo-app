@@ -97,7 +97,7 @@ input {
 }
 /* LoginPage Start*/
 
-.LoginPage {
+.login-page-main{
   height: 100vh;
   background: linear-gradient(
     90deg,
@@ -106,19 +106,19 @@ input {
   );
 }
 
-.left {
+.login-form-aside {
   position: relative;
   background: #c0dbea;
   height: 500px;
   width: 200px;
 }
-.image {
+.login-girl-image {
   position: absolute;
   top: 60px;
   right: 5px;
   width: 500px;
 }
-.right {
+.login-form-section{
   margin-left: 150px;
 }
 .h2title {
