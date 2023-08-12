@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import image from "../images/image-1.png";
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
 
 function Login() {
   const [Username, setUsername] = useState("");
@@ -33,35 +36,44 @@ function Login() {
   }, [navigate]);
 
   return (
-    <div className="LoginPage">
-      <div className="container">
+    <div className="LoginPage d-flex  justify-content-center align-items-center">
+      <Container className=" d-flex justify-content-between bg-white rounded-4">
         <div className="right">
-          <h2 className="h2title">Welcome to To Do!</h2>
-          <p className="ptitle">
+          <h2 className="h2title mt-4">Welcome to To Do!</h2>
+          <p className="mt-3">
             "Manage your time, organize your tasks with To Do!"
           </p>
-          <h1 className="h1title">Log In</h1>
+          <h1 className="mt-3 text-dark">Log In</h1>
 
-          <form className="formLogin" onSubmit={handleLogin}>
-            <input
-              type="text"
-              className="inpt"
-              onChange={handleUsernameChange}
-            />
-            <input
-              className="inpt"
-              type="password"
-              onChange={handlePasswordChange}
-            />
-            <div className="buttonLog">
-              <button className="btn log">Login</button>
+          <Form className="d-flex flex-column" onSubmit={handleLogin}>
+            <Form.Group>
+              <Form.Label>Username name</Form.Label>
+              <Form.Control
+                type="text"
+                className=" mt-1 mb-1"
+                onChange={handleUsernameChange}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                className=" mt-1"
+                type="password"
+                onChange={handlePasswordChange}
+              />
+            </Form.Group>
+
+            <div className="d-flex flex-column mt-4 ">
+              <Button className="btn log mb-4" type="submit">
+                Login
+              </Button>
             </div>
-          </form>
+          </Form>
         </div>
-        <div className="left">
+        <div className="left rounded-4 d-none d-lg-block">
           <img className="image" alt="Image" src={image} />
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

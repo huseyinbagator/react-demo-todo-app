@@ -104,22 +104,10 @@ input {
     rgba(0, 131, 176, 0.37) 0%,
     rgba(219, 0, 158, 0.32) 100%
   );
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.container {
-  display: flex;
-  justify-content: space-between;
-  width: 1000px;
-  height: 500px;
-  flex-shrink: 0;
-  border-radius: 40px;
-  background: #fff;
-}
+
 .left {
   position: relative;
-  border-radius: 40px;
   background: #c0dbea;
   height: 500px;
   width: 200px;
@@ -134,31 +122,11 @@ input {
   margin-left: 150px;
 }
 .h2title {
-  margin-top: 30px;
   color: #d885a3;
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
 }
-.ptitle {
-  margin-top: 10px;
-  opacity: 0.9;
-}
-.h1title {
-  margin-top: 20px;
-}
-.formLogin {
-  display: flex;
-  flex-direction: column;
-}
-.inpt {
-  height: 35px;
-  margin-top: 20px;
-}
-.buttonLog {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-}
+
 .btn {
   margin-top: 25px;
   height: 40px;
@@ -174,12 +142,4 @@ input {
   color: #d885a3;
   background-color: #fff;
   border: 1px solid #d885a3;
-}
-.google {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.543);
-  transition: all 0.5s ease-in-out;
 }
