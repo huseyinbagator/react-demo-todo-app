@@ -38,9 +38,9 @@ function Login() {
   }, [navigate]);
 
   return (
-    <main className="login-page-main d-flex  justify-content-center align-items-center">
+    <div className="login-page-main d-flex  justify-content-center align-items-center">
       <Container className=" d-flex justify-content-between bg-white rounded-4">
-        <div className="login-form-section">
+        <main className="login-form-section">
           <section>
             <h2 className="h2title mt-4">Welcome to To Do!</h2>
             <p className="mt-3">
@@ -72,12 +72,12 @@ function Login() {
               </Button>
             </div>
           </Form>
-        </div>
+        </main>
         <aside className="login-form-aside rounded-4 d-none d-lg-block">
           <img className="login-girl-image" alt="Girl-vector" src={image} />
         </aside>
       </Container>
-    </main>
+    </div>
   );
 }
 

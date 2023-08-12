@@ -97,7 +97,7 @@ input {
 }
 /* LoginPage Start*/
 
-.login-page-main{
+.login-page-main {
   height: 100vh;
   background: linear-gradient(
     90deg,
@@ -118,7 +118,7 @@ input {
   right: 5px;
   width: 500px;
 }
-.login-form-section{
+.login-form-section {
   margin-left: 150px;
 }
 .h2title {
