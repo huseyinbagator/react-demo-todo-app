@@ -80,11 +80,7 @@ function TasksPage() {
         <Row className="mt-3">
           <Col className="d-flex justify-content-between align-items-center ">
             <h1 className="text-white">To Do List</h1>
-            <Link
-              onClick={handleExit}
-              className="exit-btn btn btn-primary"
-              to="/"
-            >
+            <Link onClick={handleExit} className="btn btn-primary" to="/">
               Exit
             </Link>
           </Col>
@@ -103,14 +99,14 @@ function TasksPage() {
               <div className="d-flex justify-content-center align-items-center ">
                 <Button
                   type="button"
-                  class=" btn btn-primary"
+                  className=" btn btn-primary"
                   onClick={handleAdd}
                 >
                   Add
                 </Button>
                 <Button
                   type="submit"
-                  class="btn btn-primary"
+                  className="btn btn-primary"
                   onClick={handleDelete}
                 >
                   Delete Selected Task
@@ -121,21 +117,23 @@ function TasksPage() {
         </Row>
         <Row>
           <Col className="d-flex justify-content-center align-items-center ">
-            <div className="tasklist">
-              <ul className="text-white mt-2 ">
-                {taskLists.map((currentTask, index) => (
-                  <li className="mt-1 d-flex " key={index} onClick={() => handleSelectTask(index)}>
-                    {" "}
-                    <span
-                      className={`round rounded-circle me-3 bg-secondary ${
-                        selectedTask === index ? "bg-success" : ""
-                      }`}
-                    ></span>
-                    {currentTask}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="tasklist text-white mt-2 ms-4  ">
+              {taskLists.map((currentTask, index) => (
+                <li
+                  className="mt-1 d-flex "
+                  key={index}
+                  onClick={() => handleSelectTask(index)}
+                >
+                  {" "}
+                  <span
+                    className={`round rounded-circle me-3 bg-secondary ${
+                      selectedTask === index ? "bg-success" : ""
+                    }`}
+                  ></span>
+                  {currentTask}
+                </li>
+              ))}
+            </ul>
           </Col>
         </Row>
       </Container>

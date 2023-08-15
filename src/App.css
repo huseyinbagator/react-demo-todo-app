@@ -1,13 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-ul {
-  list-style-type: none;
-  margin-left: 20px;
-  font-size: 18px;
-}
-
 .App {
   min-height: 100vh;
   background: linear-gradient(to bottom right, red, blue);
@@ -15,10 +5,6 @@ ul {
 
 .tasks-page {
   width: 50%;
-}
-
-.exit-router {
-  width: 100px;
 }
 
 .task-form-control {
@@ -30,15 +16,12 @@ button {
 }
 
 .tasklist {
-  margin-top: 5px;
   border: 3px solid #fff;
   border-radius: 8px;
   width: 450px;
   min-height: 300px;
-}
-
-.exit {
-  border-radius: 5px;
+  list-style-type: none;
+  font-size: 18px;
 }
 
 .todo-bar {
@@ -64,7 +47,7 @@ button {
   position: relative;
   background: #c0dbea;
   height: 500px;
-  width: 200px; 
+  width: 200px;
 }
 
 .login-girl-image {
