@@ -1,7 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function TasksPage() {
   const [currentTask, setCurrentTask] = useState("");
@@ -70,49 +76,67 @@ function TasksPage() {
   };
   return (
     <div className="App">
-      <div className="nav-top">
-        <h1>To Do List</h1>
-        <Link onClick={handleExit} className="exit" to="/">
-          Exit
-        </Link>
-      </div>
-
-      <form className="form">
-        <div>
-          <input
-            value={currentTask}
-            onChange={handleChange}
-            placeholder="New To-do"
-          />
-        </div>
-        <div className="buttons">
-          <button className="buttonadd" onClick={handleAdd} type="submit">
-            Add
-          </button>
-          <button
-            type="submit"
-            onClick={handleDelete}
-            className="buttonadelete"
-            disabled={selectedTask === null}
-          >
-            Delete Selected Task
-          </button>
-        </div>
-      </form>
-
-      <div className="tasklist">
-        <ul>
-          {taskLists.map((currentTask, index) => (
-            <li key={index} onClick={() => handleSelectTask(index)}>
-              {" "}
-              <span
-                className={`round ${selectedTask === index ? "green" : ""}`}
-              ></span>
-              {currentTask}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Container className="tasks-page d-flex justify-content-center flex-column">
+        <Row className="mt-3">
+          <Col className="d-flex justify-content-between align-items-center ">
+            <h1 className="text-white">To Do List</h1>
+            <Link onClick={handleExit} className="btn btn-primary" to="/">
+              Exit
+            </Link>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="d-flex justify-content-center">
+            <Form className="mt-4">
+              <Form.Group className="task-form-control ">
+                <Form.Control
+                  className="todo-bar rounded-pill text-center mt-5"
+                  value={currentTask}
+                  onChange={handleChange}
+                  placeholder="New To-do"
+                />
+              </Form.Group>
+              <div className="d-flex justify-content-center align-items-center ">
+                <Button
+                  type="submit"
+                  className=" btn btn-primary"
+                  onClick={handleAdd}
+                >
+                  Add
+                </Button>
+                <Button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleDelete}
+                >
+                  Delete Selected Task
+                </Button>
+              </div>
+            </Form>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="d-flex justify-content-center align-items-center ">
+            <ul className="tasklist text-white mt-2 ms-4  ">
+              {taskLists.map((currentTask, index) => (
+                <li
+                  className="mt-1 d-flex "
+                  key={index}
+                  onClick={() => handleSelectTask(index)}
+                >
+                  {" "}
+                  <span
+                    className={`round rounded-circle me-3 bg-secondary ${
+                      selectedTask === index ? "bg-success" : ""
+                    }`}
+                  ></span>
+                  {currentTask}
+                </li>
+              ))}
+            </ul>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
