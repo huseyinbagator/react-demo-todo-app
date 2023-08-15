@@ -98,14 +98,14 @@ function TasksPage() {
               </Form.Group>
               <div className="d-flex justify-content-center align-items-center ">
                 <Button
-                  type="button"
+                  type="submit"
                   className=" btn btn-primary"
                   onClick={handleAdd}
                 >
                   Add
                 </Button>
                 <Button
-                  type="submit"
+                  type="button"
                   className="btn btn-primary"
                   onClick={handleDelete}
                 >
