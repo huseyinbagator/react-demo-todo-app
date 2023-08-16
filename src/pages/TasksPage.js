@@ -1,13 +1,15 @@
 import React from "react";
 
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
+import Row from "react-bootstrap/Row";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+
+import TaskList from "../components/TaskList";
 
 function TasksPage() {
   const [currentTask, setCurrentTask] = useState("");
@@ -116,25 +118,11 @@ function TasksPage() {
           </Col>
         </Row>
         <Row>
-          <Col className="d-flex justify-content-center align-items-center ">
-            <ul className="tasklist text-white mt-2 ms-4  ">
-              {taskLists.map((currentTask, index) => (
-                <li
-                  className="mt-1 d-flex "
-                  key={index}
-                  onClick={() => handleSelectTask(index)}
-                >
-                  {" "}
-                  <span
-                    className={`round rounded-circle me-3 bg-secondary ${
-                      selectedTask === index ? "bg-success" : ""
-                    }`}
-                  ></span>
-                  {currentTask}
-                </li>
-              ))}
-            </ul>
-          </Col>
+          <TaskList
+            taskLists={taskLists}
+            selectedTask={selectedTask}
+            handleSelectTask={handleSelectTask}
+          />
         </Row>
       </Container>
     </div>
